@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerente - Inicío | MesaPro</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/gerente.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+</head>
+<body>
+    <header>
+        <div class="menubar">
+            <div class="menu-container">
+                <button class="menu-button" aria-haspopup="true" aria-expanded="false"><i class="fi fi-rr-menu-burger"></i></button>
+                <div class="menu-dropdown" aria-label="Menu dropdown">
+                    <a id="mesa" href="#" onclick="paginaMesa()">Mesas</a>
+                    <a id="cardapio" href="#" onclick="paginaCardapio()">Cardápio</a>
+                    <a id="funcionarios" href="#" onclick="paginaFuncionario()">Funcionários</a>
+                </div>
+            </div>
+            <div>
+                <h1>Restaurante X</h1>
+            </div>
+            <nav>
+                <a id="mesa" href="#" onclick="paginaMesa()">Mesas</a>
+                <a id="cardapio" href="#" onclick="paginaCardapio()">Cardápio</a>
+                <a id="funcionarios" href="#" onclick="paginaFuncionario()">Funcionários</a>
+            </nav>
+            <div>
+                <span>Usuário</span>
+                <i class="fi fi-rr-circle-user"></i>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- MESAS -->
+        <section id="pagina-mesa" class="card-container">
+            <div id="mesa-1" class="card">
+                <div class="card-body">
+                    <h2 class="card-title">
+                        Mesa 1
+                        <span class="ribbon available"></span>
+                    </h2>
+                    <p class="card-text">
+                        <i class="fi fi-rr-users"></i>
+                        <span class="card-itemtitle">Capacidade: </span><span id="capacity">4</span> pessoas
+                    </p>
+                </div>
+                <div class="card-buttons">
+                    <button class="card-btn primary" onclick="editarMesa('mesa-1')">Editar</button>
+                    <button class="card-btn alternate" onclick="excluirMesa('mesa-1')">Excluir</button>
+                </div>
+            </div>
+
+            <div id="mesa-2" class="card">
+                <div class="card-body">
+                    <h2 class="card-title">
+                        Mesa 2
+                        <span class="ribbon occupied"></span>
+                    </h2>
+                    <p class="card-text">
+                        <i class="fi fi-rr-users"></i>
+                        <span class="card-itemtitle">Capacidade: </span><span id="capacity">4</span> pessoas
+                    </p>
+                </div>
+                <div class="card-buttons">
+                    <button class="card-btn primary" onclick="editarMesa('mesa-2')" disabled>Editar</button>
+                    <button class="card-btn alternate" onclick="excluirMesa('mesa-2')" disabled>Excluir</button>
+                </div>
+            </div>
+
+            <div id="mesa-3" class="card">
+                <div class="card-body">
+                    <h2 class="card-title">
+                        Mesa 3
+                        <span class="ribbon occupied"></span>
+                    </h2>
+                    <p class="card-text">
+                        <i class="fi fi-rr-users"></i>
+                        <span class="card-itemtitle">Capacidade: </span><span id="capacity">4</span> pessoas
+                    </p>
+                </div>
+                <div class="card-buttons">
+                    <button class="card-btn primary" onclick="editarMesa('mesa-3')" disabled>Editar</button>
+                    <button class="card-btn alternate" onclick="excluirMesa('mesa-3')" disabled>Excluir</button>
+                </div>
+            </div>
+
+            <div id="mesa-4" class="card">
+                <div class="card-body">
+                    <h2 class="card-title">
+                        Mesa 4
+                        <span class="ribbon reserved"></span>
+                    </h2>
+                    <p class="card-text">
+                        <i class="fi fi-rr-users"></i>
+                        <span class="card-itemtitle">Capacidade: </span><span id="capacity">4</span> pessoas
+                    </p>
+                    <p class="card-text">
+                        <i class="fi fi-rr-reservation-table"></i>
+                        <span class="card-itemtitle">Reservado: </span>
+                        <span class="cliente-reserva ">Marcus Aurelius</span>
+                    </p>
+                    <p class="card-text">
+                        <i class="fi fi-rr-calendar-clock"></i>
+                        <span class="card-itemtitle">Horário: </span>
+                        <span class="horario-reservado ">19:30 23/09/2024</span>
+                    </p>
+                </div>
+                <div class="card-buttons">
+                    <button class="card-btn primary" onclick="editarMesa('mesa-4')" disabled>Editar</button>
+                    <button class="card-btn alternate" onclick="excluirMesa('mesa-4')" disabled>Excluir</button>
+                </div>
+            </div>
+
+            <div id="mesa-5" class="card">
+                <div class="card-body">
+                    <h2 class="card-title">
+                        Mesa 5
+                        <span class="ribbon reserved"></span>
+                    </h2>
+                    <p class="card-text">
+                        <i class="fi fi-rr-users"></i>
+                        <span class="card-itemtitle">Capacidade: </span><span id="capacity">4</span> pessoas
+                    </p>
+                    <p class="card-text">
+                        <i class="fi fi-rr-reservation-table"></i>
+                        <span class="card-itemtitle">Reservado: </span>
+                        <span class="cliente-reserva ">Marcus Aurelius</span>
+                    </p>
+                    <p class="card-text">
+                        <i class="fi fi-rr-calendar-clock"></i>
+                        <span class="card-itemtitle">Horário: </span>
+                        <span class="horario-reservado ">19:30 23/09/2024</span>
+                    </p>
+                </div>
+                <div class="card-buttons">
+                    <button class="card-btn primary" onclick="editarMesa('mesa-5')" disabled>Editar</button>
+                    <button class="card-btn alternate" onclick="excluirMesa('mesa-5')" disabled>Excluir</button>
+                </div>
+            </div>
+
+            <div id="mesa-6" class="card">
+                <div class="card-body">
+                    <h2 class="card-title">
+                        Mesa 6
+                        <span class="ribbon available"></span>
+                    </h2>
+                    <p class="card-text">
+                        <i class="fi fi-rr-users"></i>
+                        <span class="card-itemtitle">Capacidade: </span><span id="capacity">4</span> pessoas
+                    </p>
+                </div>
+                <div class="card-buttons">
+                    <button class="card-btn primary" onclick="editarMesa('mesa-6')">Editar</button>
+                    <button class="card-btn alternate" onclick="excluirMesa('mesa-6')">Excluir</button>
+                </div>
+            </div>
+
+            <div id="mesa-7" class="card">
+                <div class="card-body">
+                    <h2 class="card-title">
+                        Mesa 7
+                        <span class="ribbon occupied"></span></h2>
+                    <p class="card-text">
+                        <i class="fi fi-rr-users"></i>
+                        <span class="card-itemtitle">Capacidade: </span><span id="capacity">4</span> pessoas
+                    </p>
+                </div>
+                <div class="card-buttons">
+                    <button class="card-btn primary" onclick="editarMesa('mesa-7')" disabled>Editar</button>
+                    <button class="card-btn alternate" onclick="excluirMesa('mesa-7')" disabled>Excluir</button>
+                </div>
+            </div>
+
+            <div id="add-table" class="card">
+                <div class="card-button-add">
+                    <button class="card-btn primary" onclick="adicionarMesa()">Adicionar</button>
+                </div>
+            </div>
+            <div class="modal-overlay" id="modalOverlayMesa">
+                <div class="modal">
+                    <div class="modal-header">
+                        <h2><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" color="#000" fill="none">
+                            <ellipse cx="12" cy="6.5" rx="10" ry="3" stroke="currentColor" stroke-width="3" />
+                            <path d="M12 20.5C12.8284 20.5 13.5898 20.2551 14.1904 19.8455C14.4774 19.6498 14.5909 19.242 14.4189 18.9153C14.0734 18.2595 13.3308 17.5 12 17.5C10.6692 17.5 9.92656 18.2595 9.58115 18.9153C9.40905 19.242 9.52257 19.6498 9.8096 19.8455C10.4102 20.2551 11.1716 20.5 12 20.5Z" stroke="currentColor" stroke-width="3" stroke-linejoin="round" />
+                            <path d="M12 17.5V9.5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg> Editando Mesa</h2>
+                        <button class="close-button" onclick="fecharModal()"><i class="fi fi-rr-cross"></i></button>
+                    </div>
+                    <div class="modal-content">
+                        <form id="newForm">
+                            <div class="form-group">
+                                <label for="tableId">Identificação</label>
+                                <input type="number" name="tableId" id="tableId" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="tableCapacity">Capacidade</label>
+                                <input type="number" name="tableCapacity" id="tableCapacity" min="0">
+                            </div>
+                            <button type="submit" class="card-btn primary">Salvar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CARDAPIO -->
+        <section id="pagina-cardapio" class="container-cardapio">
+            <div class="content-card">
+                <div class="card-header">
+                    <h1><i class="fi fi-rr-newspaper-open"></i> Cardápio</h1>
+                    <button class="btn-new  primary" onclick="cadastrarProduto()"><i class="fi fi-rr-plus-small"></i> Novo Produto</button>
+                </div>
+
+                <div class="search-container">
+                    <div class="search-group">
+                        <label for="id">ID</label>
+                        <input type="number" name="id" id="id" placeholder="Buscar por ID">
+                    </div>
+                    <div class="search-group">
+                        <label for="produto">Produto</label>
+                        <input type="text" name="produto" id="produto" placeholder="Buscar por nome">
+                    </div>
+                </div>
+
+                <table id="productTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Produto</th>
+                            <th>Tipo</th>
+                            <th>Categoria</th>
+                            <th>Preço (R$)</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>001</td>
+                            <td>Cheeseburger Clássico</td>
+                            <td>Menu Principal</td>
+                            <td>Burgers</td>
+                            <td>29.90</td>
+                            <td>
+                                <button class="btn-action" onclick="editarProduto(this)"><i class="fi fi-rr-pencil"></i></button>
+                                <button class="btn-action" onclick="removerProduto(this)"><i class="fi fi-rr-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>002</td>
+                            <td>Filé Mignon Grelhado</td>
+                            <td>Menu Principal</td>
+                            <td>Steaks</td>
+                            <td>59.90</td>
+                            <td>
+                                <button class="btn-action"><i class="fi fi-rr-pencil"></i></button>
+                                <button class="btn-action" onclick="removerProduto(this)"><i class="fi fi-rr-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>003</td>
+                            <td>Lasanha à Bolonhesa</td>
+                            <td>Menu Principal</td>
+                            <td>Massas</td>
+                            <td>42.90</td>
+                            <td>
+                                <button class="btn-action"><i class="fi fi-rr-pencil"></i></button>
+                                <button class="btn-action" onclick="removerProduto(this)"><i class="fi fi-rr-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>004</td>
+                            <td>Nuggets de Frango</td>
+                            <td>Menu Infantil</td>
+                            <td>Frango</td>
+                            <td>19.90</td>
+                            <td>
+                                <button class="btn-action"><i class="fi fi-rr-pencil"></i></button>
+                                <button class="btn-action" onclick="removerProduto(this)"><i class="fi fi-rr-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>005</td>
+                            <td>Mini Pizza de Queijo</td>
+                            <td>Menu Infantil</td>
+                            <td>Vegetarianos</td>
+                            <td>22.90</td>
+                            <td>
+                                <button class="btn-action"><i class="fi fi-rr-pencil"></i></button>
+                                <button class="btn-action" onclick="removerProduto(this)"><i class="fi fi-rr-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>006</td>
+                            <td>Suco de Laranja Natural</td>
+                            <td>Bebidas Não Alcoólicas</td>
+                            <td>Sucos</td>
+                            <td>9.90</td>
+                            <td>
+                                <button class="btn-action"><i class="fi fi-rr-pencil"></i></button>
+                                <button class="btn-action" onclick="removerProduto(this)"><i class="fi fi-rr-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>007</td>
+                            <td>Água Mineral</td>
+                            <td>Bebidas Não Alcoólicas</td>
+                            <td>Água</td>
+                            <td>4.90</td>
+                            <td>
+                                <button class="btn-action"><i class="fi fi-rr-pencil"></i></button>
+                                <button class="btn-action" onclick="removerProduto(this)"><i class="fi fi-rr-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>008</td>
+                            <td>Chopp Artesanal</td>
+                            <td>Bebidas Alcoólicas</td>
+                            <td>Chopps</td>
+                            <td>12.90</td>
+                            <td>
+                                <button class="btn-action"><i class="fi fi-rr-pencil"></i></button>
+                                <button class="btn-action" onclick="removerProduto(this)"><i class="fi fi-rr-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>009</td>
+                            <td>Batata Frita</td>
+                            <td>Menu Principal</td>
+                            <td>Aperitivos</td>
+                            <td>14.90</td>
+                            <td>
+                                <button class="btn-action"><i class="fi fi-rr-pencil"></i></button>
+                                <button class="btn-action" onclick="removerProduto(this)"><i class="fi fi-rr-trash"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="modal-overlay" id="modalOverlayCardapio">
+                    <div class="modal">
+                        <div class="modal-header">
+                            <h2><i class="fi fi-rr-hamburger-soda"></i> <span id="modo">Cadastrar Novo Produto</span></h2>
+                            <button class="close-button" onclick="fecharModal()"><i class="fi fi-rr-cross"></i></button>
+                        </div>
+                        <div class="modal-content">
+                            <form id="ProdutForm">
+                                <div class="form-group">
+                                    <label for="productId">ID</label>
+                                    <input type="number" name="productId" id="productId" placeholder="001" min="0">
+                                </div>
+                                <div class="form-group">
+                                    <label for="productName">Nome</label>
+                                    <input type="text" name="productName" id="productName" placeholder="Nome do produto">
+                                </div>
+                                <div class="form-group">
+                                    <label for="productType">Tipo</label>
+                                    <select name="productType" id="productType" >
+                                        <option value="Menu Principal">Menu Principal</option>
+                                        <option value="Menu Infantil">Menu Infantil</option>
+                                        <option value="Bebidas Não Alcoólicas">Bebidas Não Alcoólicas</option>
+                                        <option value="Bebidas Alcoólicas">Bebidas Alcoólicas</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="productCategory">Categoria</label>
+                                    <select name="productCategory" id="productCategory" >
+                                        <option value="Aperitivos">Aperitivos</option>
+                                        <option value="Carnes">Carnes</option>
+                                        <option value="Massas">Massas</option>
+                                        <option value="Frango">Frango</option>
+                                        <option value="Peixe">Peixe</option>
+                                        <option value="Burgers">Burgers</option>
+                                        <option value="Saladas">Saladas</option>
+                                        <option value="Sopas">Sopas</option>
+                                        <option value="Vegetariano">Vegetariano</option>
+                                        <option value="Sobremesa">Sobremesa</option>
+                                        <option value="Sucos">Sucos</option>
+                                        <option value="Águas">Águas</option>
+                                        <option value="Chopps">Chopps</option>
+                                        <option value="Cerveja">Cerveja</option>
+                                        <option value="Destilados">Destilados</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="productPrice">Preço (R$)</label>
+                                    <input type="number" name="productPrice" id="productPrice" placeholder="0,00" step="0.01" min="0.01">
+                                </div>
+                                <button type="submit" class="card-btn primary">Salvar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FUNCIONARIOS -->
+        <section id="pagina-funcionarios" class="container-funcionarios">
+            <div class="content-card">
+                <div class="card-header">
+                    <h1><i class="fi fi-rr-employees-woman-man"></i></i> Funcionários</h1>
+                    <button class="btn-new primary" onclick="cadastrarFuncionario()"><i class="fi fi-rr-plus-small"></i> Novo Funcionário</button>
+                </div>
+
+                <div class="search-container">
+                    <div class="search-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" name="nome" id="nome" placeholder="Buscar por nome">
+                    </div>
+                    <div class="search-group">
+                        <label for="cpf">CPF</label>
+                        <input type="text" name="cpf" id="cpf" placeholder="Buscar por CPF">
+                    </div>
+                </div>
+
+                <table id="employeeTable">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>CPF</th>
+                            <th>Telefone</th>
+                            <th>E-mail</th>
+                            <th>Senha</th>
+                            <th>Função</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Carolina Ayla Souza</td>
+                            <td>956.556.513-19</td>
+                            <td>(38) 99885-5194</td>
+                            <td>carolina.ayla.souza@email.com</td>
+                            <td>WH4NxH4UXj</td>
+                            <td>Garçom</td>
+                            <td>
+                                <button class="btn-action" onclick="editarFuncionario(this)"><i class="fi fi-rr-pencil"></i></button>
+                                <button class="btn-action" onclick="removerFuncionario(this)"><i class="fi fi-rr-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Clarice Elaine Aparício</td>
+                            <td>585.691.630-10</td>
+                            <td>(85) 99317-3315</td>
+                            <td>clariceelaineaparicio@email.com.br</td>
+                            <td>nXAJBgWiq3</td>
+                            <td>Recepcionista</td>
+                            <td>
+                                <button class="btn-action" onclick="editarFuncionario(this)"><i class="fi fi-rr-pencil"></i></button>
+                                <button class="btn-action" onclick="removerFuncionario(this)"><i class="fi fi-rr-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Henrique Cauã Fernando Moura</td>
+                            <td>944.291.797-86</td>
+                            <td>(19) 99593-0311</td>
+                            <td>henrique_moura@email.com.br</td>
+                            <td>4jTB3Mr271</td>
+                            <td>Cozinheiro</td>
+                            <td>
+                                <button class="btn-action" onclick="editarFuncionario(this)"><i class="fi fi-rr-pencil"></i></button>
+                                <button class="btn-action" onclick="removerFuncionario(this)"><i class="fi fi-rr-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Renata Renata Teixeira</td>
+                            <td>028.154.143-41</td>
+                            <td>(88) 98371-7695</td>
+                            <td>renata.renata.teixeira@email.com.br</td>
+                            <td>brBOnzhYSL</td>
+                            <td>Gerente</td>
+                            <td>
+                                <button class="btn-action" onclick="editarFuncionario(this)"><i class="fi fi-rr-pencil"></i></button>
+                                <button class="btn-action" onclick="removerFuncionario(this)"><i class="fi fi-rr-trash"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="modal-overlay" id="modalOverlayFuncionario">
+                    <div class="modal">
+                        <div class="modal-header">
+                            <h2><i class="fi fi-rr-employees-woman-man"></i> <span id="modo">Cadastrar Novo Funcionário</span></h2>
+                            <button class="close-button" onclick="fecharModal()"><i class="fi fi-rr-cross"></i></button>
+                        </div>
+                        <div class="modal-content">
+                            <form id="EmployeeForm">
+                                <div class="form-group">
+                                    <label for="employeeName">Nome</label>
+                                    <input type="text" name="employeeName" id="employeeName" placeholder="Nome do funcionário">
+                                </div>
+                                <div class="form-group">
+                                    <label for="employeeCpf">CPF</label>
+                                    <input type="text" name="employeeCpf" id="employeeCpf" placeholder="___.___.___-__">
+                                </div>
+                                <div class="form-group">
+                                    <label for="employeeTel">Telefone</label>
+                                    <input type="tel" name="employeeTel" id="employeeTel" placeholder="( ) _____-____">
+                                </div>
+                                <div class="form-group">
+                                    <label for="employeeEmail">Email</label>
+                                    <input type="email" name="employeeEmail" id="employeeEmail" placeholder="exemplo@email.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="employeePassword">Senha de login</label>
+                                    <input type="password" name="employeePassword" id="employeePassword" placeholder="Digite uma senha">
+                                </div>
+                                <div class="form-group">
+                                    <label for="employeePosition">Função</label>
+                                    <select name="employeePosition" id="employeePosition" >
+                                        <option value="Garçom">Garçom</option>
+                                        <option value="Recepcionista">Recepcionista</option>
+                                        <option value="Gerente">Gerente</option>
+                                        <option value="Cozinheiro(a)">Cozinheiro(a)</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="card-btn primary">Salvar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-info">
+            <p>&copy; 2025 Restaurante X. Todos os direitos reservados.</p>
+            <p><a href="#">Contato</a> | <a href="#">Sobre</a></p>
+        </div>
+    </footer>
+    <script src="js/gerente/script.js"></script>
+    <script src="js/gerente/mesa.js"></script>
+    <script src="js/gerente/funcionario.js"></script>
+    <script src="js/gerente/produto.js"></script>
+</body>
+</html>
