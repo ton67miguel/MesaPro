@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Recepção - Inicío | MesaPro</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/recepcionista.css">
     <title>Recepcionista | MesaPro</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
@@ -13,6 +17,11 @@
             <div>
                 <h1>Restaurante X</h1>
             </div>
+            <nav>
+                <a id="mesa" href="#" onclick="paginaMesa()">Mesas</a>
+            </nav>
+            <div>
+                <span>Recepção</span>
             <div>
                 <span>Usuário</span>
                 <i class="fi fi-rr-circle-user"></i>
@@ -20,6 +29,8 @@
         </div>
     </header>
     <main>
+        <!-- MESAS -->
+        <section id="pagina-mesa" class="card-container"> <!-- MESA LIVRE -->
         <section id="pagina-mesa" class="card-container">
             <div id="mesa-1" class="card">
                 <div class="card-body">
@@ -29,6 +40,16 @@
                     </h2>
                     <p class="card-text">
                         <i class="fi fi-rr-users"></i>
+                        <span class="card-itemtitle">Capacidade: </span><span id="capacity">4</span> pessoas
+                    </p>
+                </div>
+                <div class="card-buttons">
+                    <button class="card-btn primary" onclick="reservarMesa('mesa-4')" disabled>Ocupar</button>
+                    <button class="card-btn alternate" onclick="reservarMesa('mesa-1')">Reservar Mesa</button>
+                </div>
+            </div>
+
+            <div id="mesa-2" class="card"> <!-- MESA OCUPADA -->
                         <span class="card-itemtitle">Capacidade: </span>
                         <span class="capacity">4</span> pessoas
                     </p>
@@ -47,6 +68,19 @@
                     </h2>
                     <p class="card-text">
                         <i class="fi fi-rr-users"></i>
+                        <span class="card-itemtitle">Capacidade: </span><span id="capacity">4</span> pessoas
+                    </p>
+                </div>
+                <div class="card-buttons">
+                    <button class="card-btn primary" onclick="vercomandaMesa('mesa-2')" disabled>Ver Comanda</button>
+                    <button class="card-btn alternate" onclick="liberarMesa('mesa-2')" disabled>Liberar</button>
+                </div>
+            </div>
+
+            <div id="mesa-5" class="card"> <!-- MESA Reservada -->
+                <div class="card-body">
+                    <h2 class="card-title">
+                        Mesa 3
                         <span class="card-itemtitle">Capacidade: </span>
                         <span class="capacity">4</span> pessoas
                     </p>
@@ -98,12 +132,14 @@
                     </h2>
                     <p class="card-text">
                         <i class="fi fi-rr-users"></i>
+                        <span class="card-itemtitle">Capacidade: </span><span id="capacity">4</span> pessoas
                         <span class="card-itemtitle">Capacidade: </span>
                         <span class="capacity">4</span> pessoas
                     </p>
                     <p class="card-text">
                         <i class="fi fi-rr-reservation-table"></i>
                         <span class="card-itemtitle">Reservado: </span>
+                        <span class="cliente-reserva ">Marcus Aurelius</span>
                         <span class="cliente-reserva">Lorena Rayssa</span>
                     </p>
                     <p class="card-text">
@@ -114,6 +150,17 @@
                     <p class="card-text">
                         <i class="fi fi-rr-calendar-clock"></i>
                         <span class="card-itemtitle">Horário: </span>
+                        <span class="horario-reservado ">19:30 23/09/2024</span>
+                    </p>
+                </div>
+                <div class="card-buttons">
+                    <button class="card-btn primary" onclick="ocuparMesa('mesa-3')" disabled>Ocupar</button>
+                    <button class="card-btn alternate" onclick="removerreservaMesa('mesa-3')" disabled>Remover Reserva</button>
+                </div>
+            </div>
+
+        </section>
+
                         <span class="horario-reservado">19:30 2024-09-23</span>
                     </p>
                 </div>
@@ -237,6 +284,10 @@
             <p><a href="#">Contato</a> | <a href="#">Sobre</a></p>
         </div>
     </footer>
+   <!-- <script src="/js/recepcionista/recepcionista.js"></script>
+    <script src="/js/recepcionista/script.js"></script>-->
+</body>
+</html>
     <script src="js/recepcionista/script.js"></script>
 </body>
 </html>
