@@ -134,6 +134,43 @@ mysqli_close($link);
                 });
             }
         }
+
+        function abrirModalEditarMesa(id, numero, capacidade) {
+            document.getElementById('tableId').value = id;
+            document.getElementById('tableNumber').value = numero;
+            document.getElementById('tableCapacity').value = capacidade;
+
+            document.getElementById('modalOverlayMesa').style.display = 'flex';
+        }
+
+        function fecharModal() {
+            document.getElementById('modalOverlayMesa').style.display = 'none';
+        }
+
+        function salvarEdicaoMesa(event) {
+            event.preventDefault(); // evita o recarregamento da página
+
+            const id = document.getElementById('tableId').value;
+            const numero = document.getElementById('tableNumber').value;
+            const capacidade = document.getElementById('tableCapacity').value;
+
+            fetch('editar_mesa.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `id=${id}&numero=${numero}&capacidade=${capacidade}`
+            })
+            .then(response => response.text())
+            .then(data => {
+                console.log(data); // opcional: mostrar resposta do servidor
+                fecharModal(); // fecha o modal
+                window.location.reload(); // recarrega a página para mostrar a atualização
+            })
+            .catch(error => {
+                console.error('Erro ao editar mesa:', error);
+            });
+        }
     </script>
 
 </head>
@@ -182,7 +219,7 @@ mysqli_close($link);
                     </p>
                 </div>
                 <div class="card-buttons">
-                    <button class="card-btn primary">Editar</button>
+                    <button class="card-btn primary" onclick="abrirModalEditarMesa(<?php echo $mesa['id']; ?>, <?php echo $mesa['numero']; ?>, <?php echo $mesa['capacidade']; ?>)">Editar</button>
                     <button class="card-btn alternate" onclick="excluirMesaPhp('mesa-<?php echo $mesa['id']; ?>', '<?php echo htmlspecialchars($mesa['numero']); ?>')">Excluir</button>
                 </div>
             </div>
@@ -352,6 +389,33 @@ mysqli_close($link);
                                 <button class="card-btn primary" type="submit" name="adicionar_mesa">Adicionar Mesa</button>
                             </form>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-overlay" id="modalOverlayMesa">
+                <div class="modal">
+                    <div class="modal-header">
+                        <h2><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" color="#000" fill="none">
+                            <ellipse cx="12" cy="6.5" rx="10" ry="3" stroke="currentColor" stroke-width="3" />
+                            <path d="M12 20.5C12.8284 20.5 13.5898 20.2551 14.1904 19.8455C14.4774 19.6498 14.5909 19.242 14.4189 18.9153C14.0734 18.2595 13.3308 17.5 12 17.5C10.6692 17.5 9.92656 18.2595 9.58115 18.9153C9.40905 19.242 9.52257 19.6498 9.8096 19.8455C10.4102 20.2551 11.1716 20.5 12 20.5Z" stroke="currentColor" stroke-width="3" stroke-linejoin="round" />
+                            <path d="M12 17.5V9.5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg> Editando Mesa</h2>
+                        <button class="close-button" onclick="fecharModal()"><i class="fi fi-rr-cross"></i></button>
+                    </div>
+                    <div class="modal-content">
+                        <form id="newForm" onsubmit="salvarEdicaoMesa(event)">
+                            <input type="hidden" name="tableId" id="tableId"> <!-- esse campo armazena o ID -->
+                            <div class="form-group">
+                                <label for="tableNumber">Número da Mesa</label>
+                                <input type="number" name="tableNumber" id="tableNumber">
+                            </div>
+                            <div class="form-group">
+                                <label for="tableCapacity">Capacidade</label>
+                                <input type="number" name="tableCapacity" id="tableCapacity" min="0">
+                            </div>
+                            <button type="submit" class="card-btn primary">Salvar</button>
+                        </form>
                     </div>
                 </div>
             </div>
