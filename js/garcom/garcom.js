@@ -3,8 +3,8 @@ function verComanda(numeroMesa) {
     // Armazena a mesa selecionada
     localStorage.setItem('mesaSelecionada', numeroMesa);
     
-    // Redireciona para comandas.html com o parâmetro
-    window.location.href = `comandas.html?mesa=${numeroMesa}`;
+    // Redireciona para comandas.php com o parâmetro
+    window.location.href = `comandas.php?mesa=${numeroMesa}`;
 }
 
 // Função para fechar conta (modal)
@@ -17,7 +17,7 @@ function fecharConta(numeroMesa) {
 // Funções de navegação
 function paginaMesas() {
     // Se já está na página de mesas, não faz nada
-    if (!window.location.href.includes('comandas.html')) {
+    if (!window.location.href.includes('comandas.php')) {
         window.location.href = 'garcom.html';
     }
 }
@@ -26,7 +26,7 @@ function paginaComanda() {
     // Redireciona para a última mesa visualizada ou mostra alerta
     const mesaSalva = localStorage.getItem('mesaSelecionada');
     if (mesaSalva) {
-        window.location.href = `comandas.html?mesa=${mesaSalva}`;
+        window.location.href = `comandas.php?mesa=${mesaSalva}`;
     } else {
         alert('Selecione uma mesa primeiro');
     }

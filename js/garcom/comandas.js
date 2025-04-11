@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const mesaNumero = urlParams.get('mesa') || localStorage.getItem('mesaSelecionada');
     
     if (!mesaNumero) {
-        window.location.href = 'garcom.html';
+        window.location.href = 'garcom.php';
         return;
     }
 
@@ -298,7 +298,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             salvarComanda();
             document.getElementById('modal-fechamento').style.display = 'none';
-            window.location.href = 'garcom.html';
+            window.location.href = 'garcom.php';
         }, 2000);
     });
 
