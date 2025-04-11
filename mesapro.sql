@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 28/03/2025 às 23:47
+-- Tempo de geração: 11/04/2025 às 04:26
 -- Versão do servidor: 8.0.35
 -- Versão do PHP: 8.2.12
 
@@ -20,6 +20,22 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `mesapro`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `tables`
+--
+
+CREATE TABLE `tables` (
+  `id` smallint UNSIGNED NOT NULL,
+  `numero` tinyint UNSIGNED NOT NULL,
+  `capacidade` tinyint UNSIGNED NOT NULL,
+  `status` tinyint UNSIGNED NOT NULL,
+  `hora_reserva` varchar(30) NOT NULL,
+  `reservado_por` varchar(45) NOT NULL,
+  `tel_reseva` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -49,6 +65,12 @@ INSERT INTO `users` (`id`, `username`, `password`, `role`, `fullname`) VALUES
 --
 
 --
+-- Índices de tabela `tables`
+--
+ALTER TABLE `tables`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Índices de tabela `users`
 --
 ALTER TABLE `users`
@@ -57,6 +79,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT para tabelas despejadas
 --
+
+--
+-- AUTO_INCREMENT de tabela `tables`
+--
+ALTER TABLE `tables`
+  MODIFY `id` smallint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT de tabela `users`
