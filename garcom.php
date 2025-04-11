@@ -29,17 +29,15 @@
             <div>
                 <span>Garçom</span>
                 <i class="fi fi-rr-circle-user"></i>
-                
-                <form action="logout.php" method="post">
-                    <button type="submit">Logout</button>
-                </form>
             </div>
         </div>
     </header>
 <main>
 <!--Mesas-->
 <section id="pagina-mesa" class="card-container">
-            <div id="mesa-1" class="card">
+
+           <!--
+ <div id="mesa-1" class="card">
                 <div class="card-body">
                     <h2 class="card-title">
                         Mesa 1
@@ -53,7 +51,7 @@
                 </div>
                 <div class="card-buttons">
                     <button class="card-btn primary" onclick="verComanda('1')" disabled>Ver Comanda</button>
-                    <button class="card-btn alternate" onclick="fecharConta('1')" disabled>Fechar Conta</button>
+                    <button class="card-btn alternate" onclick="fecharConta('2')">Fechar Conta</button>
                 </div>
             </div>
 
@@ -210,9 +208,11 @@
                 </div>
                 <div class="card-buttons">
                     <button class="card-btn primary" onclick="verComanda('7')">Ver Comanda</button>
-                    <button class="card-btn alternate" onclick="fecharConta('7')">Fechar Conta</button>
+                    <button class="card-btn alternate" onclick="abrirModalFinalizar('7')">Fechar Conta</button>
                 </div>
             </div>
+-->
+
 </section>
 </main>
 <footer>
@@ -222,5 +222,6 @@
         </div>
 </footer>
 <script src="js/garcom/garcom.js"></script>
+<script src="js/garcom/comandas.js"></script>
 </body>
 </html>
